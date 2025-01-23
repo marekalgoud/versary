@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import dayjs, { Dayjs } from 'dayjs';
 
 @Injectable({
   providedIn: 'root',
@@ -6,21 +7,13 @@ import { Injectable } from '@angular/core';
 export class IcsService {
 
   public downloadIcs(
-    start: Date,
-    end: Date,
+    start: Dayjs,
+    end: Dayjs,
     title: string,
     description: string
   ) {
-    const startDate = start
-      .toISOString()
-      .replace('-', '')
-      .replace(':', '')
-      .split('.')[0];
-    const endDate = end
-      .toISOString()
-      .replace('-', '')
-      .replace(':', '')
-      .split('.')[0];
+    const startDate = start.format('YYYYMMDDTHHMMSSZ');
+    const endDate = end.format('YYYYMMDDTHHMMSSZ');
     const ics = this.generateIcs(
       startDate,
       endDate,
@@ -44,7 +37,7 @@ export class IcsService {
     title: string,
     description: string
   ) {
-    const timeStamp = new Date().toISOString();
+    const timeStamp = dayjs().format('YYYYMMDDTHHmmss');
     const uuid = `${timeStamp}-uid@$Versary`;
 
     // Don't ever format this string template
@@ -52,7 +45,7 @@ export class IcsService {
 PRODID:-//Events Calendar//Versary 1.0//$fr
 VERSION:2.0
 BEGIN:VEVENT
-DTSTAMP:${timeStamp}Z
+DTSTAMP:${timeStamp}
 DTSTART:${start}
 DTEND:${end}
 SUMMARY:${title}

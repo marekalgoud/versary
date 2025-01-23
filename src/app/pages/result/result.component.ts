@@ -59,12 +59,8 @@ export class ResultComponent {
   }
 
   download(versary: Versary) {
-    const desc =  `
-    'Youpi ! Un versaire !'
-    Le ${this.datePipe.transform(versary.dayjs.format(), 'dd/MM/yyyy')},
-    cela fera ${ versary.versary }
-    que le ${this.datePipe.transform(this.date().format(), 'dd/MM/yyyy')} est passé !`
-    this.icsService.downloadIcs(versary.dayjs.toDate(), versary.dayjs.toDate(), versary.versary, desc)
+    const desc = `Youpi ! Un versaire ! Le ${this.datePipe.transform(versary.dayjs.format(), 'dd/MM/yyyy')}, cela fera ${ versary.versary } que le ${this.datePipe.transform(this.date().format(), 'dd/MM/yyyy')} est passé !`
+    this.icsService.downloadIcs(versary.dayjs, versary.dayjs, versary.versary, desc)
 
   }
 
