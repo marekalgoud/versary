@@ -15,7 +15,7 @@ interface Versary {
   templateUrl: './result.component.html',
   styleUrl: './result.component.css',
   imports: [DatePipe, RouterLink],
-  providers: [DecimalPipe],
+  providers: [DecimalPipe, DatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ResultComponent {
