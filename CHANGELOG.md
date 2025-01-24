@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.0 (2025-01-24)
+
+* feat: ajout de nouvelles dates versaires ([f113d06](https://github.com/marekalgoud/versary/commit/f113d06))
+* chore(deps): update dependency release-it to v18.1.2 (#6) ([6424fcc](https://github.com/marekalgoud/versary/commit/6424fcc)), closes [#6](https://github.com/marekalgoud/versary/issues/6)
+
 ## 1.4.0 (2025-01-24)
 
 * fix: ajout de la balise link dans le fichier index.html ([c4f69b7](https://github.com/marekalgoud/versary/commit/c4f69b7))
