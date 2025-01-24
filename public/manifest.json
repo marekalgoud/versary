@@ -1,6 +1,7 @@
 {
   "name": "Versary",
   "short_name": "",
+  "start_url": "/",
   "icons": [
     {
       "purpose": "maskable",
