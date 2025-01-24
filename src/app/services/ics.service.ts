@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import dayjs, { Dayjs } from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+
+dayjs.extend(utc);
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +15,8 @@ export class IcsService {
     title: string,
     description: string
   ) {
-    const startDate = start.format('YYYYMMDDTHHMMSSZ');
-    const endDate = end.format('YYYYMMDDTHHMMSSZ');
+    const startDate = start.utc().format('YYYYMMDDTHHmmss[Z]');
+    const endDate = end.utc().format('YYYYMMDDTHHmmss[Z]');
     const ics = this.generateIcs(
       startDate,
       endDate,
@@ -37,7 +40,7 @@ export class IcsService {
     title: string,
     description: string
   ) {
-    const timeStamp = dayjs().format('YYYYMMDDTHHmmss');
+    const timeStamp = dayjs().utc().format('YYYYMMDDTHHmmss[Z]');
     const uuid = `${timeStamp}-uid@$Versary`;
 
     // Don't ever format this string template
