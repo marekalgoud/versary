@@ -11,7 +11,7 @@ versary est une simple appli qui calcule des dates d'anniversaire à partir d'un
 
 ## Ressources
 
-- Logo et favicon générés avec copilot et https://favicon.io/favicon-converter/
+- Logo et favicon générés avec copilot et https://maskable.app/editor
 - icones présentes dans l'app téléchargées depuis https://www.flaticon.com/fr/uicons/interface-icons
 
 ## Url de l'application
